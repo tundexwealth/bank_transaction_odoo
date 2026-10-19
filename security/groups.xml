@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="module_category_bank_monitoring" model="ir.module.category">
+        <field name="name">Bank Transaction Monitoring</field>
+        <field name="sequence">30</field>
+    </record>
+
+    <record id="group_bank_transaction_user" model="res.groups">
+        <field name="name">Transaction User</field>
+        <field name="category_id" ref="module_category_bank_monitoring"/>
+    </record>
+
+    <record id="group_bank_transaction_manager" model="res.groups">
+        <field name="name">Transaction Manager</field>
+        <field name="category_id" ref="module_category_bank_monitoring"/>
+        <field name="implied_ids" eval="[(4, ref('group_bank_transaction_user'))]"/>
+    </record>
+</odoo>

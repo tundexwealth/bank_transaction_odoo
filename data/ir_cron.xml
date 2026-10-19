@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ir_cron_process_bank_transactions" model="ir.cron">
+        <field name="name">Process Bank Transactions</field>
+        <field name="model_id" ref="model_bank_transaction"/>
+        <field name="state">code</field>
+        <field name="code">model.cron_process_pending_transactions()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">minutes</field>
+        <field name="active">True</field>
+        <field name="user_id" ref="base.user_root"/>
+    </record>
+</odoo>
